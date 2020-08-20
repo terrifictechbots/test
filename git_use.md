@@ -1,4 +1,4 @@
-# How to use git on the Command Line
+# How to use git
 I forked terrifictechbots test repository on Github so I could make changes to it without affecting the main branch (normally called "upstream").
 My fork of the test repo lives here: https://github.com/jardiamj/test.git
 
