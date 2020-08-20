@@ -35,9 +35,9 @@ This command will clone the repository into a folder of the same name, in this c
 <summary>On the Command Line</summary>
 <p>
 
-The command check the status of our repository is ```git status``` but to understand its output we first need to understand what it means "to commit" a change. For practical purposes let's think of a commit as a snapshot of our project at a particular place in time, with that analogy we can say that git keeps a timeline of commits.
+The command to check the status of our repository is ```git status``` but to understand its output we first need to understand what it means "to commit" a change. For practical purposes let's think of a commit as a snapshot of our project at a particular place in time. With that analogy in mind we can say that git keeps a timeline of commits.
 
-Every time we make a commit we are taking a snapshot of our project, we could later roll back to this state if needed to, therefore its recommended that we only commit when our project is in a working state.
+Every time we make a commit we are taking a snapshot of our project. We can roll back to previous states, therefore its recommended that we only commit when our project is in a working state.
 
 Let's take a look at the output of the ```git status``` command:
 
@@ -55,11 +55,11 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 This is telling us that:
 - We are working on the master branch.
-- Our branch is up to date with 'origin/master'
-- There are changes not staged for commit which means that, if we commit, these changes will not go into the commit (snapshot). Git allows us to do this in case there are changes that we don't want to include in the commit.
-- This command also tells us what we can do to add the changes ```git add``` and/or ```git commit -a```. The -a flag means: include all changes included those not staged.
+- Our branch is up to date with 'origin/master'.
+- There are changes not staged for commit. This means that, if we commit now, these changes will not go into the snapshot. Git allows us to do this in case there are changes that we purposely don't want to include.
+- At the end it tells us how to add the changes with ```git add``` and/or ```git commit -a```. The -a flag means: include all changes even those not yet staged.
 
-Staging a change means to place it in the list of changes that will be commited and that is what ```git add``` does. Let's stage our changes and then check the satus again:
+Staging a file means that we place it in the list of files that will be commited. Let's stage our changes and then check the satus again:
 
 ```command
 git add -A
@@ -75,20 +75,25 @@ Changes to be committed:
 
 ```
 
-The -A flag means "add all changes" the the git status tells us that we have changes to be committed, it also tells us how to remove or unstage those changes.
+- The -A flag means "add all changes".
+- Now, git status tells us that we have changes to be committed and how to remove/unstage them.
 
-Now we can commit our changes which we do using ```git commit```. If we run the command just like this we will be presented with an editor, usually the default editor in our system, where we have to write a description for our commit. It is recommended that we write a very descriptive message. We could also run it with the ```-m``` flag follow by our message, like in the following example:
+We can now commit our changes using ```git commit```. If we run the command just like this we will be presented with an editor, usually the default editor in our system, where we have to write a description for our commit. It is recommended that we write a very descriptive message.
+
+We could also run ```git commit``` with the ```-m``` flag followed by our message inside quotation marks, like in the following example:
 
 ```command
 git commit -m "Added file git_use.md with instructions on how to use git"
 ```
 
-We have been working on our local copy so far, it's now time to push those changes into our "origin" branch for which a link was automatically created when we cloned the project. The command to do that is, you guessed it: ```git push``` followed by the name of our remote branch and then the name of the branch we want to push to it. We can ommit the last 2 parameters, in which case git will push the current local branch into the default remote branch:
+We have been working on our local copy so far, it's now time to push those changes into our "origin" branch. A link to it was automatically created when we cloned the project.
+
+The command for pushing a branch is, you guessed it: ```git push``` followed by the name of our remote branch and then the name of the branch we want to push to the remote.
 
 ```command
 git push origin master
 ```
-or simply:
+We could ommit the last 2 parameters, in which case git will push the current local branch into the default remote branch:
 ```command
 git push
 ```
