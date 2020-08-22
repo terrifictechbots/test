@@ -1,8 +1,8 @@
 # How to use git
-I forked terrifictechbots test repository on Github so I could make changes to it without affecting the main branch (normally called "upstream").
-My fork of the test repo lives here: https://github.com/jardiamj/test.git
+To use it as an example, I forked terrifictechbots SKYSTONE_20 repository on Github so I could make changes to it without affecting the team's code (normally called "upstream").
+My fork of the test repo lives here: https://github.com/jardiamj/SKYSTONE_20.git
 
-I will follow each one of the following steps in order.
+I will use my fork of the repository to demostrate the git commands and Android Studio menu options.
 
 ---
 
@@ -12,10 +12,10 @@ I will follow each one of the following steps in order.
 <p>
 
 ```console
-git clone https://github.com/jardiamj/test.git
+git clone https://github.com/jardiamj/SKYSTONE_20.git
 ```
 
-This command will clone the repository into a folder of the same name, in this case "test".
+This command will clone the repository into a folder of the same name, in this case "SKYSTONE_20".
 </p>
 
 </details>
@@ -23,8 +23,10 @@ This command will clone the repository into a folder of the same name, in this c
 <details>
 <summary>On Android Studio</summary>
 
+- On the welcoe screen select "Get from Version Control"
 ![image](src/AndoidStudioWelcome.png)
 
+- Enter the URL of the GitHub repository and the location where you want the project to be saved.
 ![image](src/EnterGithubRepo.png)
 </details>
 
@@ -35,7 +37,7 @@ This command will clone the repository into a folder of the same name, in this c
 <summary>On the Command Line</summary>
 <p>
 
-The command to check the status of our repository is ```git status``` but to understand its output we first need to understand what it means "to commit" a change. For practical purposes let's think of a commit as a snapshot of our project at a particular place in time. With that analogy in mind we can say that git keeps a timeline of commits.
+The command to check the status of our repository is ```git status```. To understand its output we first need to understand what it means "to commit" a change. For practical purposes let's think of a commit as a snapshot of our project at a particular place in time. With that analogy in mind, we can say that git keeps a timeline of commits.
 
 Every time we make a commit we are taking a snapshot of our project. We can roll back to previous states, therefore its recommended that we only commit when our project is in a working state.
 
@@ -55,8 +57,8 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 This is telling us that:
 - We are working on the master branch.
-- Our branch is up to date with 'origin/master'.
-- There are changes not staged for commit. This means that, if we commit now, these changes will not go into the snapshot. Git allows us to do this in case there are changes that we purposely don't want to include.
+- Our branch is up to date with the remote branch 'origin/master'.
+- There are changes not staged for commit. This means that, if we commit now, these changes will not go into the snapshot. Git allows this in case there are changes that we purposely don't want to include.
 - At the end it tells us how to add the changes with ```git add``` and/or ```git commit -a```. The -a flag means: include all changes even those not yet staged.
 
 Staging a file means that we place it in the list of files that will be commited. Let's stage our changes and then check the satus again:
@@ -104,7 +106,7 @@ git push
 <details>
 <summary>On the Android Studio</summary>
 
-Android Studio let's us know that a file has changes not yet commited by chaging the file's name color on the tree view and file tab.
+Android Studio let's us know that a file has changes not yet commited by marking its name on the tree view and file tab with a different color.
 
 ![image](src/Status.png)
 
